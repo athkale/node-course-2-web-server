@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -57,6 +58,6 @@ app.get('/bad',(req,res) => {
     errorMessage: 'Unable to fulfill this request'
   })
 });
-app.listen(3000,() => {
-  console.log('Server is now running')
+app.listen(port,() => {
+  console.log(`Server is now running at ${port}`)
 });
